@@ -11,25 +11,26 @@ namespace HomeWorkN
         static void Main(string[] args)
         {
             Random random = new Random();
-            int n = random.Next(1, 28);
-            Console.WriteLine(n);
+            int minRandomNumber = 1;
+            int maxRandomNumber = 28;
+            int randomNumberN = random.Next(minRandomNumber, maxRandomNumber);
             int totalNumber = 0;
             int maxNumber = 1000;
             int minNumber = 100;
 
             for (int i = minNumber; i < maxNumber; i++)
             {
-                int c = i;
-                while (c >= n)
+                int variableAlgorithm = i;
+                while (variableAlgorithm >= randomNumberN)
                 {
-                    c -= n;
-                    if (c == 0)
+                    variableAlgorithm -= randomNumberN;
+                    if (variableAlgorithm == 0)
                     {
                         totalNumber += 1;
                     }
                 }
             }
-            Console.WriteLine($"Количество трехзначных натуральных чисел, которые кратны {n} равно {totalNumber}");
+            Console.WriteLine($"Количество трехзначных натуральных чисел, которые кратны {randomNumberN} равно {totalNumber}");
         }
-    }
+    }   
 }
